@@ -1,6 +1,8 @@
 package com.docshare.docshare.ui.screens
 
 import android.widget.Toast
+import android.net.Uri
+import android.util.Log
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
@@ -13,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
+import com.docshare.docshare.repository.UploadRepository
 
 @Composable
 fun UploadScreen(
@@ -128,6 +131,7 @@ fun ReviewScreen(
 ) {
     var submitting by rememberSaveable { mutableStateOf(false) }
     val ctx = LocalContext.current
+    val repo = remember { UploadRepository(ctx) }
 
     Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
@@ -150,7 +154,17 @@ fun ReviewScreen(
         Spacer(Modifier.height(24.dp))
 
         Button(onClick = {
-            if (!submitting) submitting = true
+            if (!submitting) {
+                Log.i("RequestDetail", "APPROVE clicked; queuing UploadWorker")
+                // Enqueue skeleton worker with mock data
+                repo.enqueueUpload(
+                    "req-mock-001",
+                    "doc-mock-001",
+                    Uri.parse("file:///sdcard/Download/sample_document.pdf"),
+                    "owner-mock-001"
+                )
+                submitting = true
+            }
         }, enabled = !submitting, modifier = Modifier.fillMaxWidth()) { Text("Submit (Mock)") }
 
         if (submitting) {
