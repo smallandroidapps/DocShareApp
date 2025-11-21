@@ -4,7 +4,7 @@
     <application
         android:name=".DocShareApp"
         android:label="DocShare"
-        android:icon="@drawable/ic_avatar_placeholder"
+        android:icon="@mipmap/ic_launcher"
         android:theme="@style/Theme.DocShare">
 
         <activity android:name=".MainActivity"
@@ -18,4 +18,3 @@
     </application>
 
 </manifest>
-
