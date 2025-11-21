@@ -3,11 +3,15 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
-    <application
-        android:name=".DocShareApp"
-        android:label="DocShare"
-        android:icon="@mipmap/ic_launcher"
-        android:theme="@style/Theme.DocShare">
+<application
+    android:name=".DocShareApp"
+    android:label="DocShare"
+    android:icon="@mipmap/ic_launcher"
+    android:theme="@style/Theme.DocShare">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true"/>
 
         <activity android:name=".MainActivity" android:exported="true" />
 
