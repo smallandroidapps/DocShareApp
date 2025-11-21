@@ -89,8 +89,12 @@
 
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.docshare.docshare.ui.search.SearchFragment"
-        android:label="Search" />
+        android:name="com.docshare.docshare.fragments.search.SearchFragment"
+        android:label="Search">
+        <action
+            android:id="@+id/action_searchFragment_to_contactCardFragment"
+            app:destination="@id/contactCardFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/uploadFragment"
@@ -107,5 +111,14 @@
         android:name="com.docshare.docshare.ui.review.ReviewFragment"
         android:label="Review"
         tools:layout="@layout/review_fragment"/>
+
+    <fragment
+        android:id="@+id/contactCardFragment"
+        android:name="com.docshare.docshare.fragments.contact.ContactCardFragment"
+        android:label="Contact Card">
+        <argument
+            android:name="userId"
+            app:argType="string" />
+    </fragment>
 
 </navigation>
