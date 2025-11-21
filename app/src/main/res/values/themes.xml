@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Theme.DocShare" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/ds_primary</item>
-        <item name="colorSecondary">@color/ds_secondary</item>
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorSecondary">@color/dark_grey</item>
         <item name="colorTertiary">@color/ds_accent</item>
-        <item name="android:statusBarColor" tools:targetApi="l">@color/ds_primary</item>
-        <item name="android:navigationBarColor" tools:targetApi="l">@color/ds_secondary</item>
-        <!-- Removed materialCardViewStyle to avoid style resolution conflicts -->
-        <item name="materialButtonStyle">@style/Widget.DocShare.PrimaryButton</item>
+        <!-- Edge-to-edge -->
+        <item name="android:statusBarColor" tools:targetApi="l">@android:color/transparent</item>
+        <item name="android:navigationBarColor" tools:targetApi="l">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="l">true</item>
+        <!-- Typography and components -->
+        <item name="materialButtonStyle">@style/Widget.DocShare.Button.Primary</item>
         <item name="textAppearanceBodyMedium">@style/Text.DocShare.Body</item>
         <item name="textAppearanceTitleLarge">@style/Text.DocShare.Title</item>
+        <!-- TextInputLayout style applied per-view to avoid attr resolution issues -->
     </style>
 
     <style name="Widget.DocShare.Card" parent="Widget.MaterialComponents.CardView">
@@ -25,11 +28,53 @@
     </style>
 
     <style name="Text.DocShare.Title" parent="TextAppearance.Material3.TitleLarge">
-        <item name="android:textColor">@color/ds_secondary</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif</item>
     </style>
 
     <style name="Text.DocShare.Body" parent="TextAppearance.Material3.BodyMedium">
-        <item name="android:textColor">@color/ds_on_surface</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif</item>
     </style>
+
+    <style name="Text.DocShare.Subtitle" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Text.DocShare.Button" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <!-- Buttons -->
+    <style name="Widget.DocShare.Button.Base" parent="Widget.Material3.Button">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Widget.DocShare.Button.Primary" parent="Widget.DocShare.Button.Base">
+        <item name="android:background">@drawable/bg_button_primary</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Widget.DocShare.Button.Outlined" parent="Widget.DocShare.Button.Base">
+        <item name="android:background">@drawable/bg_button_outline</item>
+        <item name="android:textColor">@color/primary_blue</item>
+    </style>
+
+    <style name="Widget.DocShare.Button.Text" parent="Widget.DocShare.Button.Base">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@color/primary_blue</item>
+    </style>
+
+    <!-- Inputs: base drawables provided in res/drawable; per-view styles can reference them -->
     
 </resources>
