@@ -6,6 +6,9 @@
     <string name="privacy_footer">Your privacy. Your control.</string>
     <string name="btn_google_sign_in">Continue with Google</string>
     <string name="btn_guest">Continue as Guest</string>
+    <string name="login_loading">Signing in...</string>
+    <string name="login_network_unavailable">Network unavailable</string>
+    <string name="default_web_client_id">YOUR_CLIENT_ID_FROM_FIREBASE</string>
     <string name="contacts_empty">Search and connect with registered DocShare users.</string>
     <string name="contacts_empty_title">Contacts</string>
     <string name="contacts_empty_desc">Search and connect with registered DocShare users.</string>
