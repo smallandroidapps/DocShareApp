@@ -44,6 +44,9 @@
         <action
             android:id="@+id/action_homeFragment_to_blockTrustedFragment"
             app:destination="@id/blockTrustedFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
     </fragment>
 
     <fragment
@@ -79,5 +82,10 @@
         android:id="@+id/blockTrustedFragment"
         android:name="com.docshare.docshare.ui.blocktrusted.BlockTrustedFragment"
         android:label="Trusted / Block"/>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.docshare.docshare.ui.search.SearchFragment"
+        android:label="Search" />
 
 </navigation>
