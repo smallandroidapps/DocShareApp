@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DocShare</string>
+    <string name="splash_title">DocShare – Secure Document Exchange</string>
+    <string name="welcome_title">Welcome to DocShare</string>
+    <string name="privacy_footer">Your privacy. Your control.</string>
+    <string name="btn_google_sign_in">Continue with Google</string>
+    <string name="btn_guest">Continue as Guest</string>
+    <string name="contacts_empty">Search and connect with registered DocShare users.</string>
+    <string name="contacts_empty_title">Contacts</string>
+    <string name="contacts_empty_desc">Search and connect with registered DocShare users.</string>
+    <string name="requests_empty">No requests yet.</string>
+    <string name="search_hint">Search by name or mobile</string>
+    <string name="profile_menu_account">Account details</string>
+    <string name="profile_menu_documents">My Documents</string>
+    <string name="profile_menu_premium">Premium Plans</string>
+    <string name="profile_menu_settings">App Settings</string>
+    <string name="profile_menu_logout">Logout</string>
+    <string name="contact_details_online">Online</string>
+    <string name="contact_request_documents">Request Documents</string>
+    <string name="contact_view_history">View Request History</string>
+    <string name="contact_trusted_block">Trusted / Block Settings</string>
+    <string name="contact_view_sample">View Sample Contact</string>
+    <string name="home_title">Home</string>
+    <string name="premium_title">Premium Plans</string>
+    <string name="contact_details_title">Contact Details</string>
+    <string name="contact_details_desc">Basic info about the contact.</string>
+    <string name="premium_continue_razorpay">Continue with Razorpay</string>
+    <string name="my_documents_empty">Upload and manage your personal documents here.</string>
+    <string name="trusted_contacts">Trusted Contacts</string>
+    <string name="blocked_contacts">Blocked Contacts</string>
+    <string name="trusted_contacts_title">Trusted Contacts</string>
+    <string name="blocked_contacts_title">Blocked Contacts</string>
+    <string name="empty_state">(empty)</string>
+    <string name="settings_title">Settings</string>
+    <string name="settings_item_profile">Profile</string>
+    <string name="settings_item_privacy">Privacy</string>
+    <string name="my_documents_title">My Documents</string>
+</resources>

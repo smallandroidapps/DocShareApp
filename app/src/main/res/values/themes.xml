@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.DocShare" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/ds_primary</item>
+        <item name="colorSecondary">@color/ds_secondary</item>
+        <item name="colorTertiary">@color/ds_accent</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/ds_primary</item>
+        <item name="android:navigationBarColor" tools:targetApi="l">@color/ds_secondary</item>
+        <!-- Removed materialCardViewStyle to avoid style resolution conflicts -->
+        <item name="materialButtonStyle">@style/Widget.DocShare.PrimaryButton</item>
+        <item name="textAppearanceBodyMedium">@style/Text.DocShare.Body</item>
+        <item name="textAppearanceTitleLarge">@style/Text.DocShare.Title</item>
+    </style>
+
+    <style name="Widget.DocShare.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+
+    <style name="Widget.DocShare.PrimaryButton" parent="Widget.Material3.Button">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:background">@drawable/bg_button_gradient</item>
+        <item name="android:textColor">@color/ds_on_primary</item>
+    </style>
+
+    <style name="Text.DocShare.Title" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/ds_secondary</item>
+    </style>
+
+    <style name="Text.DocShare.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/ds_on_surface</item>
+    </style>
+    
+</resources>
