@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/splashFragment">
 
@@ -47,6 +48,9 @@
         <action
             android:id="@+id/action_homeFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_uploadFragment"
+            app:destination="@id/uploadFragment" />
     </fragment>
 
     <fragment
@@ -87,5 +91,21 @@
         android:id="@+id/searchFragment"
         android:name="com.docshare.docshare.ui.search.SearchFragment"
         android:label="Search" />
+
+    <fragment
+        android:id="@+id/uploadFragment"
+        android:name="com.docshare.docshare.ui.upload.UploadFragment"
+        android:label="Upload"
+        tools:layout="@layout/upload_fragment">
+        <action
+            android:id="@+id/action_uploadFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.docshare.docshare.ui.review.ReviewFragment"
+        android:label="Review"
+        tools:layout="@layout/review_fragment"/>
 
 </navigation>

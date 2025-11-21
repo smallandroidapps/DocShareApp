@@ -24,4 +24,7 @@
     <color name="chipSelected">#E6F0FF</color>
     <color name="chipUnselected">#FFFFFF</color>
     <color name="cardShadow">#1A000000</color>
+    <color name="dashed_grey">#D0D0D0</color>
+    <color name="primary_1976D2">#1976D2</color>
+    <color name="chip_light_gray">#F1F1F1</color>
 </resources>

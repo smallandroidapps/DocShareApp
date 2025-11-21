@@ -92,6 +92,15 @@
         <!-- Spacing -->
         <Space android:layout_width="match_parent" android:layout_height="@dimen/space_12" />
 
+        <!-- Upload Button -->
+        <Button
+            android:id="@+id/btnUpload"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Upload Document"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_button_primary_upload" />
+
         <!-- Tags Chips -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvTags"

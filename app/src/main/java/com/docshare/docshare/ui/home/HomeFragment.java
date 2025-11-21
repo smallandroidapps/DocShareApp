@@ -69,6 +69,8 @@ public class HomeFragment extends Fragment {
     private void setupClickListeners() {
         binding.cardSearch.setOnClickListener(v -> NavHostFragment.findNavController(this)
                 .navigate(R.id.action_homeFragment_to_searchFragment));
+        binding.btnUpload.setOnClickListener(v -> NavHostFragment.findNavController(this)
+                .navigate(R.id.action_homeFragment_to_uploadFragment));
     }
 
     private void observeViewModel() {
