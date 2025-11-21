@@ -22,7 +22,9 @@ import androidx.compose.ui.unit.dp
 fun HomeScreen(
     onOpenContacts: () -> Unit,
     onOpenRequests: () -> Unit,
-    onOpenPremium: () -> Unit
+    onOpenSearch: () -> Unit,
+    onOpenPremium: () -> Unit,
+    onOpenUpload: () -> Unit
 ) {
     Column(
         modifier = Modifier.fillMaxSize().padding(16.dp),
@@ -38,6 +40,8 @@ fun HomeScreen(
 
         Button(onClick = onOpenContacts, modifier = Modifier.padding(top = 24.dp)) { Text("Contacts") }
         Button(onClick = onOpenRequests, modifier = Modifier.padding(top = 12.dp)) { Text("Requests") }
+        Button(onClick = onOpenSearch, modifier = Modifier.padding(top = 12.dp)) { Text("Search") }
+        Button(onClick = onOpenUpload, modifier = Modifier.padding(top = 12.dp)) { Text("Upload") }
         Button(onClick = onOpenPremium, modifier = Modifier.padding(top = 12.dp)) { Text("Premium") }
     }
 }

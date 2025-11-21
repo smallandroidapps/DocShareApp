@@ -20,6 +20,9 @@ object Routes {
     const val LOGIN = "login"
     const val HOME = "home"
     const val CONTACTS = "contacts"
+    const val SEARCH = "search"
+    const val UPLOAD = "upload"
+    const val UPLOAD_REVIEW = "upload_review"
     const val CONTACT_DETAILS = "contact_details/{contactId}"
     const val DOCUMENT_REQUEST = "document_request/{contactId}"
     const val REQUESTS_HISTORY = "requests_history/{contactId}"
@@ -45,7 +48,9 @@ fun AppNavHost() {
                     val currentUserId = LocalDataProvider.currentUser.id
                     navController.navigate("${Routes.REQUESTS_HISTORY.removeSuffix("/{contactId}")}/$currentUserId")
                 },
-                onOpenPremium = { navController.navigate(Routes.PREMIUM) }
+                onOpenSearch = { navController.navigate(Routes.SEARCH) },
+                onOpenPremium = { navController.navigate(Routes.PREMIUM) },
+                onOpenUpload = { navController.navigate(Routes.UPLOAD) }
             )
         }
         composable(Routes.CONTACTS) {
@@ -108,6 +113,27 @@ fun AppNavHost() {
         composable(Routes.PREMIUM) {
             PremiumPlansScreen(onBack = { navController.popBackStack() })
         }
+        composable(Routes.SEARCH) {
+            com.docshare.docshare.ui.screens.SearchContactsScreen(
+                contacts = LocalDataProvider.contacts,
+                onContactClick = { contactId ->
+                    navController.navigate("${Routes.CONTACT_DETAILS.removeSuffix("/{contactId}")}/$contactId")
+                },
+                onBack = { navController.popBackStack() }
+            )
+        }
+
+        composable(Routes.UPLOAD) {
+            com.docshare.docshare.ui.screens.UploadScreen(
+                onBack = { navController.popBackStack() },
+                onNext = { navController.navigate(Routes.UPLOAD_REVIEW) }
+            )
+        }
+        composable(Routes.UPLOAD_REVIEW) {
+            com.docshare.docshare.ui.screens.ReviewScreen(
+                onBack = { navController.popBackStack() },
+                onSubmit = { navController.popBackStack(Routes.HOME, false) }
+            )
+        }
     }
 }
-

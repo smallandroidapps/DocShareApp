@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
     namespace 'com.docshare.docshare'
@@ -51,5 +52,16 @@ dependencies {
     implementation 'androidx.activity:activity-compose:1.8.0'
     implementation 'androidx.navigation:navigation-compose:2.7.7'
 
-    // Firebase dependencies removed for initial skeleton build stability
+    // Firebase and Google Sign-In
+    implementation platform('com.google.firebase:firebase-bom:33.5.1')
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.android.gms:play-services-auth:21.2.0'
+}
+
+// Apply Google Services plugin only if configuration file exists
+if (file("google-services.json").exists()) {
+    apply plugin: 'com.google.gms.google-services'
+} else {
+    println("[DocShareApp] google-services.json missing; skipping google-services plugin application.")
 }
