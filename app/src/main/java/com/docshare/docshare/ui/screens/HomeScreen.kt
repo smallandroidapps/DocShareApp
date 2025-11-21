@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 fun HomeScreen(
     onOpenContacts: () -> Unit,
     onOpenRequests: () -> Unit,
+    onOpenSearch: () -> Unit,
     onOpenPremium: () -> Unit
 ) {
     Column(
@@ -38,6 +39,7 @@ fun HomeScreen(
 
         Button(onClick = onOpenContacts, modifier = Modifier.padding(top = 24.dp)) { Text("Contacts") }
         Button(onClick = onOpenRequests, modifier = Modifier.padding(top = 12.dp)) { Text("Requests") }
+        Button(onClick = onOpenSearch, modifier = Modifier.padding(top = 12.dp)) { Text("Search") }
         Button(onClick = onOpenPremium, modifier = Modifier.padding(top = 12.dp)) { Text("Premium") }
     }
 }
